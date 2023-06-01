@@ -59,4 +59,3 @@ module.exports = {
 	books,
 	authors
 }
-GraphQL - Apollo - Tutorial

@@ -5,6 +5,9 @@ const cors = require('cors')
 
 const typeDefs = require('./schema/schema')
 const resolvers = require('./resolver/resolver')
+//Load DB medthods
+const mongoDataMethods = require('./data/db')
+
 const main = async () => {
     // Connect to MongoDB
     const connectDB = async () => {
@@ -32,7 +35,7 @@ const main = async () => {
     const server = new ApolloServer({
         typeDefs,
         resolvers,
-        // context: () => ({ mongoDataMethods })
+        context: () => ({ mongoDataMethods })
     })
     await server.start();
     const app = express();
